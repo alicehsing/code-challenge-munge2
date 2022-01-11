@@ -72,9 +72,9 @@ Output:
 */
 
 export function makeSpanishLanguageArray(arr) {
-    const spanishArray = arr.map(data=> ({
-        nombre: data.name,
-        tipo: data.type
+    const spanishArray = arr.map(item=> ({
+        nombre: item.name,
+        tipo: item.type
     }));
     return spanishArray;
 }
@@ -140,7 +140,10 @@ OUTPUT:
 */
 
 export function findByName(name, arr) {
-    return {};
+    const newArr = arr.filter((pet) => {
+        if(pet.name === name) return true; 
+    });
+    return newArr[0];
 }
 
 /*
@@ -166,7 +169,13 @@ Output:
 */
 
 export function makeArrayOfArraysOfArrays(arr) {
-    return [];
+    const newArray = arr.map(pet => {
+        return [
+            ['name', pet.name],
+            ['type', pet.type]
+        ];
+    });
+    return newArray;
 }
 
 ////////////////////////////////////////////////////////
