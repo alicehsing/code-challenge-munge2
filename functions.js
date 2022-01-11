@@ -18,7 +18,11 @@ OUTPUT:
 ]*/
 
 export function getDogs(arr) {
-    return [];
+    const getDogsArr = arr.filter((pet) => {
+        if(pet.type === 'dog')
+            return true;
+    });
+    return getDogsArr;
 }
 
 /*
@@ -27,7 +31,10 @@ OUTPUT:
 */
 
 export function getNamesOfDogs(arr) {
-    return [];
+    const dogsNameArr = arr
+        .filter(pet => pet.type === 'dog')
+        .map(pet => pet.name);
+    return dogsNameArr;
 }
 
 
@@ -38,7 +45,8 @@ Output:
 */
 
 export function makeArrayOfNames(arr) {
-    return [];
+    const nameArr = arr.map(pet => pet.name);
+    return nameArr;
 }
 
 /*
@@ -48,7 +56,8 @@ Output:
 */
 
 export function makeReversedArrayOfTypes(arr) {
-    return [];
+    const reversedTypeArr = arr.map(pet => pet.type).reverse();
+    return reversedTypeArr;
 }
 
 /*
@@ -63,7 +72,11 @@ Output:
 */
 
 export function makeSpanishLanguageArray(arr) {
-    return [];
+    const spanishArray = arr.map(item=> ({
+        nombre: item.name,
+        tipo: item.type
+    }));
+    return spanishArray;
 }
 
 /*
@@ -77,7 +90,12 @@ Output:
 ]*/
 
 export function makeArrayWithIsHungry(arr) {
-    return [];
+    const newPropertyArr = arr.map(pet => ({
+        name: pet.name,
+        isHungry: true,
+        type: pet.type,
+    }));
+    return newPropertyArr;
 }
 
 /*
@@ -91,7 +109,11 @@ Output:
 ]*/
 
 export function makeShoutingArray(arr) {
-    return [];
+    const shoutingArr = arr.map(pet => ({
+        name: pet.name.toUpperCase(),
+        type: pet.type
+    }));
+    return shoutingArr;
 }
 
 
@@ -102,7 +124,10 @@ Output:
 */
 
 export function makeStringArray(arr) {
-    return [];
+    const makeStringArr = arr.map(pet => (
+        `${pet.name}${pet.type}`
+    ));
+    return makeStringArr;
 }
 
 /*
@@ -115,7 +140,10 @@ OUTPUT:
 */
 
 export function findByName(name, arr) {
-    return {};
+    const newArr = arr.filter((pet) => {
+        if(pet.name === name) return true; 
+    });
+    return newArr[0];
 }
 
 /*
@@ -141,7 +169,13 @@ Output:
 */
 
 export function makeArrayOfArraysOfArrays(arr) {
-    return [];
+    const newArray = arr.map(pet => {
+        return [
+            ['name', pet.name],
+            ['type', pet.type]
+        ];
+    });
+    return newArray;
 }
 
 ////////////////////////////////////////////////////////
@@ -170,7 +204,8 @@ Output:
 */
 
 export function getCars(arr) {
-    return [];
+    const carsArr = arr.filter(car => car.type === 'car');
+    return carsArr;
 }
 
 /*
@@ -183,7 +218,10 @@ Output:
 */
 
 export function getChevyCars(arr) {
-    return [];
+    const chevyArr = arr
+        .filter(car => car.type === 'car')
+        .filter(car => car.make === 'chevy');
+    return chevyArr;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
