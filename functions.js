@@ -45,7 +45,8 @@ Output:
 */
 
 export function makeArrayOfNames(arr) {
-    return [];
+    const nameArr = arr.map(pet => pet.name);
+    return nameArr;
 }
 
 /*
@@ -55,7 +56,8 @@ Output:
 */
 
 export function makeReversedArrayOfTypes(arr) {
-    return [];
+    const reversedTypeArr = arr.map(pet => pet.type).reverse();
+    return reversedTypeArr;
 }
 
 /*
@@ -70,7 +72,11 @@ Output:
 */
 
 export function makeSpanishLanguageArray(arr) {
-    return [];
+    const spanishArray = arr.map(pet => ({
+        nombre: pet.name,
+        tipo: pet.type
+    }));
+    return spanishArray;
 }
 
 /*
