@@ -72,9 +72,9 @@ Output:
 */
 
 export function makeSpanishLanguageArray(arr) {
-    const spanishArray = arr.map(pet => ({
-        nombre: pet.name,
-        tipo: pet.type
+    const spanishArray = arr.map(data=> ({
+        nombre: data.name,
+        tipo: data.type
     }));
     return spanishArray;
 }
@@ -90,7 +90,12 @@ Output:
 ]*/
 
 export function makeArrayWithIsHungry(arr) {
-    return [];
+    const newPropertyArr = arr.map(pet => ({
+        name: pet.name,
+        isHungry: true,
+        type: pet.type,
+    }));
+    return newPropertyArr;
 }
 
 /*
@@ -104,7 +109,11 @@ Output:
 ]*/
 
 export function makeShoutingArray(arr) {
-    return [];
+    const shoutingArr = arr.map(pet => ({
+        name: pet.name.toUpperCase(),
+        type: pet.type
+    }));
+    return shoutingArr;
 }
 
 
@@ -115,7 +124,10 @@ Output:
 */
 
 export function makeStringArray(arr) {
-    return [];
+    const makeStringArr = arr.map(pet => (
+        `${pet.name}${pet.type}`
+    ));
+    return makeStringArr;
 }
 
 /*
