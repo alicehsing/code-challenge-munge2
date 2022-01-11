@@ -204,7 +204,8 @@ Output:
 */
 
 export function getCars(arr) {
-    return [];
+    const carsArr = arr.filter(car => car.type === 'car');
+    return carsArr;
 }
 
 /*
@@ -217,7 +218,10 @@ Output:
 */
 
 export function getChevyCars(arr) {
-    return [];
+    const chevyArr = arr
+        .filter(car => car.type === 'car')
+        .filter(car => car.make === 'chevy');
+    return chevyArr;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
